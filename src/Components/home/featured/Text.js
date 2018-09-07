@@ -3,7 +3,7 @@ import { easePolyOut } from 'd3-ease';
 
 import Animate from 'react-move/Animate';
 
-import FeaturedPlayer from '../../../Resources/images/featured_player.png'
+import FeaturedPlayer from '../../../Resources/images/featured_player.png';
 
 class Text extends Component {
   animateNumber = () => (
@@ -44,20 +44,20 @@ class Text extends Component {
       start={{
         opacity: 0,
         x: 503,
-        y:450
+        y: 450
       }}
       enter={{
         opacity: [1],
         rotate: [360],
         x: [273],
-        y:[450],
+        y: [450],
         timing: {
           duration: 500,
           ease: easePolyOut
         }
       }}
     >
-      {({ opacity,x ,y}) => {
+      {({ opacity, x, y }) => {
         return (
           <div
             className="featured_first"
@@ -74,76 +74,73 @@ class Text extends Component {
   );
   animateSecond = () => (
     <Animate
-    show={true}
-    start={{
-      opacity: 0,
-      x: 503,
-      y:450
-    }}
-    enter={{
-      opacity: [1],
-      rotate: [360],
-      x: [273],
-      y:[586],
-      timing: {
-        delay:300,
-        duration: 500,
-        ease: easePolyOut
-      }
-    }}
-  >
-    {({ opacity,x ,y}) => {
-      return (
-        <div
-          className="featured_second"
-          style={{
-            opacity,
-            transform: `translate(${x}px, ${y}px)`
-          }}
-        >
-          Champiuonship
-        </div>
-      );
-    }}
-  </Animate>
-
-  )
+      show={true}
+      start={{
+        opacity: 0,
+        x: 503,
+        y: 450
+      }}
+      enter={{
+        opacity: [1],
+        rotate: [360],
+        x: [273],
+        y: [586],
+        timing: {
+          delay: 300,
+          duration: 500,
+          ease: easePolyOut
+        }
+      }}
+    >
+      {({ opacity, x, y }) => {
+        return (
+          <div
+            className="featured_second"
+            style={{
+              opacity,
+              transform: `translate(${x}px, ${y}px)`
+            }}
+          >
+            Champiuonship
+          </div>
+        );
+      }}
+    </Animate>
+  );
   animatePlayer = () => (
     <Animate
-    show={true}
-    start={{
-      opacity: 0
-    }}
-    enter={{
-      opacity: [1],
-      timing: {
-        delay:800,
-        duration: 500,
-        ease: easePolyOut
-      }
-    }}
-  >
-    {({ opacity}) => {
-      return (
-        <div
-          className="featured_player"
-          style={{
-            opacity,
-            background:`url(${FeaturedPlayer})`,
-            transform: `translate(550px, 201px)`
-          }}
-        >
-          Champiuonship
-        </div>
-      );
-    }}
-  </Animate>
-
-  )
+      show={true}
+      start={{
+        opacity: 0
+      }}
+      enter={{
+        opacity: [1],
+        timing: {
+          delay: 800,
+          duration: 500,
+          ease: easePolyOut
+        }
+      }}
+    >
+      {({ opacity }) => {
+        return (
+          <div
+            className="featured_player"
+            style={{
+              opacity,
+              background: `url(${FeaturedPlayer})`,
+              transform: `translate(550px, 201px)`
+            }}
+          >
+          </div>
+        );
+      }}
+    </Animate>
+  );
   render() {
     return (
       <div className="featured_text">
-      {this.animatePlayer()}
+        {this.animatePlayer()}
         {this.animateNumber()}
         {this.animateFirst()}
         {this.animateSecond()}
