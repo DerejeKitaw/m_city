@@ -11,7 +11,7 @@ const Footer = () => {
           linkTo="/"
         />
       </div>
-      <div classNmae="footer_discl">Manchester city 2018. All right reserved.</div>
+      <div className="footer_discl">Manchester city 2018. All right reserved.</div>
     </footer>
   )
 }
